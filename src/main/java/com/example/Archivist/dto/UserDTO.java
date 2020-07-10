@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 @Data
 @AllArgsConstructor
 public class UserDTO {
-
-    private HttpStatus httpStatus;
-
-    private int userId;
+    private long userId;
     private String firstName;
     private String middleName;
     private String lastName;

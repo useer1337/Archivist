@@ -5,10 +5,6 @@ import com.example.Archivist.config.ApplicationConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import ru.hostco.reguser.types.GetUserRequest;
-import ru.hostco.reguser.types.GetUserResponse;
-
-import javax.xml.bind.JAXBElement;
 
 @Slf4j
 public class UserClient extends WebServiceGatewaySupport {
@@ -16,6 +12,7 @@ public class UserClient extends WebServiceGatewaySupport {
     @Autowired
     private ApplicationConfiguration applicationConfiguration;
 
+    //TODO раскоментировать когда доделаю SOAP
 //    public GetUserResponse getUser(String snils) {
 //        GetUserRequest request = new GetUserRequest();
 //        request.setSNILS(snils);
