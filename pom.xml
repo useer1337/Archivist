@@ -19,9 +19,10 @@
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
@@ -62,20 +63,40 @@
                 <version>0.14.0</version>
                 <executions>
                     <execution>
+                        <id>reguser-service</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <schemaLanguage>WSDL</schemaLanguage>
+<!--                            <generatePackage>com.example.Archivist.wsdlclasess</generatePackage>-->
+                            <schemaIncludes>
+                                <include>src/main/resources/wsdl/types.xsd</include>
+                            </schemaIncludes>
+                            <schemas>
+                                <schema>
+                                    <url>src/main/resources/wsdl/RegUser.wsdl</url>
+                                </schema>
+                            </schemas>
+                            <bindingDirectory>src/main/resources/wsdl</bindingDirectory>
+                            <bindingIncludes>
+                              <include>binding.xml</include>
+                            </bindingIncludes>
+
+                            <extension>true</extension>
+                            <args>
+                                <arg>-Xannotate</arg>
+                            </args>
+                            <plugins>
+                                <plugin>
+                                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                                    <artifactId>jaxb2-basics-annotate</artifactId>
+                                    <version>1.1.0</version>
+                                </plugin>
+                            </plugins>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>com.example.Archivist.wsdlclasess</generatePackage>
-                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                    <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
-                    <schemaIncludes>
-                        <include>*.wsdl</include>
-                    </schemaIncludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

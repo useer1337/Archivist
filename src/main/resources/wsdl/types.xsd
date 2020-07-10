@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by koshkin (EMBRACE) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.hostco.ru/reguser/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hostco.ru/reguser/types">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.hostco.ru/reguser/types" targetNamespace="http://www.hostco.ru/reguser/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="GUIDType">
 		<xs:annotation>
 			<xs:documentation>GUID</xs:documentation>
@@ -115,7 +115,7 @@
 		<xs:annotation>
 			<xs:documentation>Список некритичных ошибок, возникающих при работе методов</xs:documentation>
 		</xs:annotation>
-		<xs:sequence maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
 			<xs:element name="warning" type="tns:WarningType">
 				<xs:annotation>
 					<xs:documentation>Сообщение</xs:documentation>
@@ -128,7 +128,7 @@
 			<xs:documentation>Описание некритичной ошибки, возникающей при работе методов</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType">
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>СНИЛС</xs:documentation>
 				</xs:annotation>
@@ -178,27 +178,27 @@
 					<xs:documentation>тип документа</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="series" type="xs:string">
+			<xs:element name="series" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>серия документа</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="number" type="xs:string">
+			<xs:element name="number" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>номер документа</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="issueDate" type="xs:date">
+			<xs:element name="issueDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>дата выдачи документа</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="issueId" type="xs:string">
+			<xs:element name="issueId" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>код подразделения</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="issuedBy" type="xs:string">
+			<xs:element name="issuedBy" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>кем выдан</xs:documentation>
 				</xs:annotation>
@@ -221,7 +221,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element minOccurs="0" name="RoleTitle">
+			<xs:element name="RoleTitle" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Описание роли</xs:documentation>
 				</xs:annotation>
@@ -231,8 +231,8 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element minOccurs="0" name="IsBase" type="xs:int"/>
-			<xs:element minOccurs="0" name="MCOD" type="tns:MuCodeType">
+			<xs:element name="IsBase" type="xs:int" minOccurs="0"/>
+			<xs:element name="MCOD" type="tns:MuCodeType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Код ЛПУ (некоторые роли привязаны к ЛПУ)</xs:documentation>
 				</xs:annotation>
@@ -263,7 +263,7 @@
 		<xs:complexContent>
 			<xs:extension base="tns:PersonType">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="children" type="tns:ChildrenType">
+					<xs:element name="children" type="tns:ChildrenType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Список детей</xs:documentation>
 						</xs:annotation>
@@ -277,57 +277,57 @@
 			<xs:documentation>Сведения о физическом лице</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType">
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Номер СНИЛС</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="Lastname" type="tns:FIOType">
+			<xs:element name="Lastname" type="tns:FIOType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Фамилия</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="Firstname" type="tns:FIOType">
+			<xs:element name="Firstname" type="tns:FIOType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Имя</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="Middlename" type="tns:FIOType">
+			<xs:element name="Middlename" type="tns:FIOType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Отчество</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BirthDate" type="xs:date">
+			<xs:element name="BirthDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Дата рождения</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="Phone" type="tns:PhoneType">
+			<xs:element name="Phone" type="tns:PhoneType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Телефон</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="email" type="xs:string">
+			<xs:element name="email" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Электронная почта</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="gender" type="xs:int">
+			<xs:element name="gender" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Код пола (c51007)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="PolicyNumber" type="tns:PolicyNumberType">
+			<xs:element name="PolicyNumber" type="tns:PolicyNumberType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Полис ОМС</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="birthPlace" type="tns:BirthPlaceType">
+			<xs:element name="birthPlace" type="tns:BirthPlaceType"  minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Место рождения</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="documents" type="tns:DocumentsType">
+			<xs:element name="documents" type="tns:DocumentsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Сведения о ДУЛ</xs:documentation>
 				</xs:annotation>
@@ -341,17 +341,17 @@
 		<xs:complexContent>
 			<xs:extension base="tns:PersonType">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Erroneous" type="xs:boolean">
+					<xs:element name="Erroneous" type="xs:boolean" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Флаг наличия ошибки в записи</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+					<xs:element name="ErrorCode" type="xs:int" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Код ошибки</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="ErrorText" type="xs:string">
+					<xs:element name="ErrorText" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Примечания к статусу записи</xs:documentation>
 						</xs:annotation>
@@ -398,7 +398,7 @@
 							<xs:documentation>Имя</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="Middlename" type="tns:FIOType">
+					<xs:element name="Middlename" type="tns:FIOType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Отчество</xs:documentation>
 						</xs:annotation>
@@ -408,37 +408,37 @@
 							<xs:documentation>Дата рождения</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="Phone" type="tns:PhoneType">
+					<xs:element name="Phone" type="tns:PhoneType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Телефон</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="email" type="xs:string">
+					<xs:element name="email" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Электронная почта</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="gender" type="xs:int">
+					<xs:element name="gender" type="xs:int" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Код пола (c51007)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="PolicyNumber" type="tns:PolicyNumberType">
+					<xs:element name="PolicyNumber" type="tns:PolicyNumberType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Полис ОМС</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="birthPlace" type="tns:BirthPlaceType">
+					<xs:element name="birthPlace" type="tns:BirthPlaceType"  minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Место рождения</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="documents" type="tns:DocumentsType">
+					<xs:element name="documents" type="tns:DocumentsType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Сведения о ДУЛ</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="children" type="tns:ChildrenType">
+					<xs:element name="children" type="tns:ChildrenType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Список детей</xs:documentation>
 						</xs:annotation>
@@ -457,12 +457,12 @@
 					<xs:documentation>Код ошибки (0 - отсутствие ошибок)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="ErrorText" type="xs:string">
+			<xs:element name="ErrorText" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Текст ошибки, не связанной с конкретной записью</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="ErrorList">
+			<xs:element name="ErrorList" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Список ошибок при приеме конкретных записей</xs:documentation>
 				</xs:annotation>
@@ -471,7 +471,7 @@
 						<xs:element name="RecordError">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element minOccurs="0" name="RecordCode" type="xs:string">
+									<xs:element name="RecordCode" type="xs:string" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Идентификатор записи. Зависит от конкретного типа принимаемых данных</xs:documentation>
 										</xs:annotation>
@@ -509,7 +509,7 @@
 				</xs:sequence>
 				<xs:element name="Error" type="tns:StandartResponseType"/>
 			</xs:choice>
-			<xs:element minOccurs="0" name="Warnings" type="tns:WarningListType">
+			<xs:element name="Warnings" type="tns:WarningListType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Список некритичных ошибок</xs:documentation>
 				</xs:annotation>
@@ -523,7 +523,7 @@
 		<xs:complexContent>
 			<xs:extension base="tns:LoginStrictType">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="CreatePatient" type="xs:boolean">
+					<xs:element name="CreatePatient" type="xs:boolean" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Создавать запись в OP_PATIENT при регистрации пользователя</xs:documentation>
 						</xs:annotation>
@@ -553,7 +553,7 @@
 		<xs:complexContent>
 			<xs:extension base="tns:LoginType">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="mcode" type="tns:MuCodeType">
+					<xs:element name="mcode" type="tns:MuCodeType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Код ЛПУ</xs:documentation>
 						</xs:annotation>
@@ -570,12 +570,12 @@
 		<xs:complexContent>
 			<xs:extension base="tns:StandartResponseType">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="mcode" type="tns:MuCodeType">
+					<xs:element name="mcode" type="tns:MuCodeType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Код ЛПУ для роли "Пользователь"</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="warnings" type="tns:WarningListType">
+					<xs:element name="warnings" type="tns:WarningListType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Список некритичных ошибок</xs:documentation>
 						</xs:annotation>
@@ -613,7 +613,7 @@
 			<xs:documentation>Ответ на запрос сведений о пользователе</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType">
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Снилс из запроса</xs:documentation>
 				</xs:annotation>
@@ -622,12 +622,12 @@
 				<xs:element name="Login" type="tns:LoginStrictType"/>
 				<xs:element name="Error" type="tns:StandartResponseType"/>
 			</xs:choice>
-			<xs:element minOccurs="0" name="mcode" type="tns:MuCodeType">
+			<xs:element name="mcode" type="tns:MuCodeType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Код ЛПУ</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="gender" type="xs:int">
+			<xs:element name="gender" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Код пола (c51007)</xs:documentation>
 				</xs:annotation>
@@ -639,7 +639,7 @@
 			<xs:documentation>Запрос списка ролей пользователя. Если СНИЛС не указан, то возвращается список всех ролей</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType"/>
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute ref="tns:token"/>
 	</xs:complexType>
@@ -648,7 +648,7 @@
 			<xs:documentation>Ответ на запрос списка ролей</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType">
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Снилс из запроса</xs:documentation>
 				</xs:annotation>
@@ -676,7 +676,7 @@
 			<xs:documentation>Ответ на запрос на присваивание ролей</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="SNILS" type="tns:SNILSType">
+			<xs:element name="SNILS" type="tns:SNILSType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Снилс из запроса</xs:documentation>
 				</xs:annotation>
@@ -684,12 +684,12 @@
 			<xs:element name="Error" type="tns:StandartResponseType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="regCallUserRequest" type="tns:RegUserRequestType"> <!--Переопределение? Зачем?-->
+	<xs:element name="regUserRequest" type="tns:RegUserRequestType">
 		<xs:annotation>
 			<xs:documentation>Вызов сервиса</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="regReqUserResponse" type="tns:RegUserResponseType"> <!--Переопределение? Зачем? Ошибка? -->
+	<xs:element name="regUserResponse" type="tns:RegUserResponseType">
 		<xs:annotation>
 			<xs:documentation>Ответное сообщение с результатом вызова операции сервиса</xs:documentation>
 		</xs:annotation>
@@ -722,7 +722,7 @@
 					<xs:documentation>СНИЛС</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="temporary" type="xs:boolean">
+			<xs:element name="temporary" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Признак временного пароля</xs:documentation>
 				</xs:annotation>
@@ -758,7 +758,7 @@
 							<xs:documentation>СНИЛС</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element maxOccurs="0" minOccurs="0" name="temporary" type="xs:boolean">
+					<xs:element name="temporary" type="xs:boolean" minOccurs="0" maxOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Признак временного пароля</xs:documentation>
 						</xs:annotation>
