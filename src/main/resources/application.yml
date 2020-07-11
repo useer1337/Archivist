@@ -1,6 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test
+    username: archi
+    password: 123
+
 logging:
   level:
     org.springframework.ws: TRACE
-
 app:
   soapToken: 'D468E929-A94E-4F16-A7D2-DB414EC53071'

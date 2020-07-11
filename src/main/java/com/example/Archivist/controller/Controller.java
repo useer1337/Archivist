@@ -1,16 +1,21 @@
 package com.example.Archivist.controller;
 
+import com.example.Archivist.dto.MoDTO;
+import com.example.Archivist.dto.MoList;
 import com.example.Archivist.dto.UserDTO;
-import org.apache.catalina.User;
+import com.example.Archivist.repository.MoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class Controller {
+
+    @Autowired
+    private MoRepository moRepository;
 
     private final String snils = "16067057157";
 
@@ -24,5 +29,13 @@ public class Controller {
         }
 
         return null;
+    }
+
+    @GetMapping("/mo")
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<MoList> getMo(){
+        MoList moList = moRepository.getMoList();
+
+        return new ResponseEntity<>(moList,HttpStatus.OK);
     }
 }
