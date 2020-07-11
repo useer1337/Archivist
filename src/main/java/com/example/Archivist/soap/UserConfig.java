@@ -1,4 +1,4 @@
-package com.example.Archivist;
+package com.example.Archivist.soap;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

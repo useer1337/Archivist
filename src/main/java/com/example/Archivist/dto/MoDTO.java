@@ -8,5 +8,5 @@ import lombok.Data;
 public class MoDTO {
     private String shortName;
     private String codeMo;
-    private boolean isShown;
+    private Boolean isShown;
 }

@@ -1,4 +1,4 @@
-package com.example.Archivist;
+package com.example.Archivist.soap;
 
 
 import com.example.Archivist.config.ApplicationConfiguration;
