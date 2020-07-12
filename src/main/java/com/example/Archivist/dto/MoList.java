@@ -1,6 +1,5 @@
 package com.example.Archivist.dto;
 
-import com.example.Archivist.jpa.models.RefMo;
 import lombok.Data;
 
 import java.util.ArrayList;

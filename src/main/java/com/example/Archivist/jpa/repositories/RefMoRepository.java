@@ -3,7 +3,6 @@ package com.example.Archivist.jpa.repositories;
 import com.example.Archivist.jpa.models.RefMo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import java.math.BigDecimal;
 import java.util.List;
