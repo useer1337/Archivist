@@ -342,6 +342,10 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
+.mvn/wrapper/maven-wrapper.properties
+.mvn
+.mvn/wrapper
+
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -374,6 +378,3 @@ $RECYCLE.BIN/
 
 # Archives
 *.gz
-
-# Maven
-.mvn

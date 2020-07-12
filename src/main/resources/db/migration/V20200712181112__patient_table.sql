@@ -7,7 +7,7 @@ CREATE TABLE archivist.patient(
     middleName varchar (255) null,
     snils varchar (1000) null,
     enp varchar (1000) null,
-    birthDate varchar (255) null,
+    birthDate date null,
     remdResult varchar (255) null,
     codeMo varchar (1000) null,
     date_insert timestamp (255) null,

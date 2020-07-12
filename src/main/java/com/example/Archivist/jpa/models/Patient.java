@@ -74,7 +74,7 @@ public class Patient {
      * Дата рождение поциента
      */
     @Column(name = "birthdate")
-    private String birthDate;
+    private LocalDate birthDate;
 
     /**
      * Результат оптравки документа
