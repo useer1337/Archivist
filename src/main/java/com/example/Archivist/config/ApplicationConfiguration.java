@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @ConfigurationProperties(prefix = "app")
-
 public class ApplicationConfiguration {
     private String soapToken;
+    private String url;
 }
