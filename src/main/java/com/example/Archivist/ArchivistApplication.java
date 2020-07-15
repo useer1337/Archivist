@@ -9,17 +9,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @SpringBootApplication
 public class ArchivistApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(ArchivistApplication.class, args);
-
-		//TODO раскоментировать когда доделаю SOAP
-//		UserClient userClient = applicationContext.getBean(UserClient.class);
-//		GetUserResponse response = userClient.getUser("28752377117");
-//
-//		log.info(response.getLogin().getFirstname() + " "
-//				+ response.getLogin().getMiddlename() + " "
-//				+ response.getLogin().getLastname());
 	}
 
 }

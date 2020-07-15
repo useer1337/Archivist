@@ -1,4 +1,4 @@
-CREATE TABLE archivist.patient(
+CREATE TABLE archivist.patientData(
     id serial not null ,
     userId numeric not null,
     cardNumber varchar (255) null,
@@ -16,18 +16,18 @@ CREATE TABLE archivist.patient(
 );
 
 -- Column comments
-COMMENT ON COLUMN archivist.patient.userId IS 'id пользователя';
-COMMENT ON COLUMN archivist.patient.cardNumber IS 'Номер карты';
-COMMENT ON COLUMN archivist.patient.lastName IS 'Фамилия пациента';
-COMMENT ON COLUMN archivist.patient.middleName IS 'Отчество пациента';
-COMMENT ON COLUMN archivist.patient.firstName IS 'Имя пациента';
-COMMENT ON COLUMN archivist.patient.snils IS 'Снилс';
-COMMENT ON COLUMN archivist.patient.enp IS 'Полис ОМС';
-COMMENT ON COLUMN archivist.patient.birthDate IS 'Дата рождение поциента';
-COMMENT ON COLUMN archivist.patient.remdResult IS 'Результат оптравки документа';
-COMMENT ON COLUMN archivist.patient.codeMo IS 'Код мед. орг.';
-COMMENT ON COLUMN archivist.patient.date_insert IS 'Дата добавления';
-COMMENT ON COLUMN archivist.patient.date_update IS 'Дата обновления';
+COMMENT ON COLUMN archivist.patientData.userId IS 'id пользователя';
+COMMENT ON COLUMN archivist.patientData.cardNumber IS 'Номер карты';
+COMMENT ON COLUMN archivist.patientData.lastName IS 'Фамилия пациента';
+COMMENT ON COLUMN archivist.patientData.middleName IS 'Отчество пациента';
+COMMENT ON COLUMN archivist.patientData.firstName IS 'Имя пациента';
+COMMENT ON COLUMN archivist.patientData.snils IS 'Снилс';
+COMMENT ON COLUMN archivist.patientData.enp IS 'Полис ОМС';
+COMMENT ON COLUMN archivist.patientData.birthDate IS 'Дата рождение поциента';
+COMMENT ON COLUMN archivist.patientData.remdResult IS 'Результат оптравки документа';
+COMMENT ON COLUMN archivist.patientData.codeMo IS 'Код мед. орг.';
+COMMENT ON COLUMN archivist.patientData.date_insert IS 'Дата добавления';
+COMMENT ON COLUMN archivist.patientData.date_update IS 'Дата обновления';
 
 
 

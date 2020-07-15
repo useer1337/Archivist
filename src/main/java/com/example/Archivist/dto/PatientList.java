@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Это класс обертка над классом {@link PatientDTO}.
+ * Нужен потому что rest запрос не возвращяет список на прямую,
+ * а возвращяет обьект содержащий список.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

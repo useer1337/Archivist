@@ -8,15 +8,15 @@ import java.time.*;
 /**
  * 
  * @author kovalalexander
- * Create at 2020-07-12 20:56
+ * Create at 2020-07-12 14:22
  */
 @Entity
-@Table(name = "patient", schema = "archivist")
+@Table(name = "patientdata", schema = "archivist")
 @Data
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
-public class Patient {
+public class PatientData {
 
     /**
      * 

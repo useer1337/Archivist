@@ -10,4 +10,5 @@ import org.springframework.stereotype.Component;
 public class ApplicationConfiguration {
     private String soapToken;
     private String url;
+    private String soapUrl;
 }

@@ -10,7 +10,7 @@
     <xjc:javaType adapter="com.example.Archivist.xmladapters.AdapterXmlDate"
       name="java.time.LocalDate"
       xmlType="xs:date"/>
-    <xjc:javaType adapter="rcom.example.Archivist.xmladapters.AdapterXmlDateTime"
+    <xjc:javaType adapter="com.example.Archivist.xmladapters.AdapterXmlDateTime"
       name="java.time.LocalDateTime"
       xmlType="xs:dateTime"/>
     <xjc:simple/>

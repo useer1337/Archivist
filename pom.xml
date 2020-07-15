@@ -79,6 +79,17 @@
             </plugin>
 
             <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.5.1</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/test</url>
+                    <user>postgres</user>
+                    <password>123</password>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <version>0.14.0</version>
@@ -90,7 +101,6 @@
                         </goals>
                         <configuration>
                             <schemaLanguage>WSDL</schemaLanguage>
-<!--                            <generatePackage>com.example.Archivist.wsdlclasess</generatePackage>-->
                             <schemaIncludes>
                                 <include>src/main/resources/wsdl/types.xsd</include>
                             </schemaIncludes>
@@ -115,10 +125,12 @@
                                     <version>1.1.0</version>
                                 </plugin>
                             </plugins>
+
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 

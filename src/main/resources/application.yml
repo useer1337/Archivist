@@ -11,3 +11,4 @@ logging:
 app:
   soapToken: 'D468E929-A94E-4F16-A7D2-DB414EC53071'
   url: 'http://localhost:8086'
+  soapUrl: 'https://cas-test.hostco.ru/RegUserService/services/RegUserService'

@@ -1,28 +1,30 @@
 package com.example.Archivist.soap;
 
+import com.example.Archivist.config.ApplicationConfiguration;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
+@RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class UserConfig {
+    private final ApplicationConfiguration applicationConfiguration;
 
-    //TODO раскоментировать когда доделаю SOAP
-//    @Bean
-//    public Jaxb2Marshaller marshaller() {
-//        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-//        // this package must match the package in the <generatePackage> specified in
-//        // pom.xml
-//        marshaller.setContextPath("ru.hostco.reguser");
-//        return marshaller;
-//    }
-//
-//    @Bean
-//    public UserClient userClient(Jaxb2Marshaller marshaller){
-//        UserClient userClient = new UserClient();
-//        userClient.setDefaultUri("https://cas-test.hostco.ru/RegUserService/services/RegUserService");
-//        userClient.setMarshaller(marshaller);
-//        userClient.setUnmarshaller(marshaller);
-//        return userClient;
-//    }
+    @Bean
+    public Jaxb2Marshaller marshaller() {
+        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+        marshaller.setContextPath("ru.hostco.reguser.types");
+        return marshaller;
+    }
+
+    @Bean
+    public UserClient soapConnector(Jaxb2Marshaller marshaller) {
+        UserClient client = new UserClient();
+        client.setDefaultUri(applicationConfiguration.getSoapUrl());
+        client.setMarshaller(marshaller);
+        client.setUnmarshaller(marshaller);
+        return client;
+    }
 }
